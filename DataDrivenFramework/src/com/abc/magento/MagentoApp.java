@@ -1,13 +1,12 @@
 package com.abc.magento;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class MagentoApp {
 
@@ -18,7 +17,7 @@ public class MagentoApp {
 		String url=p.getProperty("url");
 		String un=p.getProperty("un");
 		String pwd=p.getProperty("pwd");
-		ChromeDriver driver=new ChromeDriver();
+		WebDriver driver=new FirefoxDriver();
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
 		driver.get(url);
